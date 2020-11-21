@@ -2,11 +2,11 @@ CREATE DATABASE snakeData;
 use snakeData;
 
 CREATE TABLE IF NOT EXISTS snakes (
-     `id` INT NOT NULL AUTO_INCREMENT,
+    `id` INT NOT NULL AUTO_INCREMENT,
     `Game_Number` INT,
     `Game_Length` INT
 );
-INSERT INTO snakes VALUES
+INSERT INTO snakes ('Game_Number', 'Game_Length') VALUES
     (1, 30),
     (2, 29),
     (3, 31),

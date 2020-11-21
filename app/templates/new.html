@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h5 class="card-title" style="margin-top: 20px">New Snake</h5>
+
+<form action="/snake/new" method="post">
+
+  <div class="form-group row">
+    <label for="Game_Number" class="col-sm-2 col-form-label">Game_Number</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="Game_Number" name="Game_Number" placeholder="Game_Number">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="Game_Length" class="col-sm-2 col-form-label">Game_Length</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="Game_Length" name="Game_Length" placeholder="Game_Length">
+    </div>
+  </div>
+
+  </div>
+
+  <button type="submit" class="btn btn-success">Save</button>
+
+</form>
+{% endblock %}
