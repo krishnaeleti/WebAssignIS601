@@ -93,22 +93,38 @@ def api_retrieve(hw_id) -> str:
     return resp
 
 
-@app.route('/api/v1/hw/', methods=['POST'])
-def api_add() -> str:
-    resp = Response(status=201, mimetype='application/json')
-    return resp
-
-
 @app.route('/api/v1/hw/<int:hw_id>', methods=['PUT'])
 def api_edit(hw_id) -> str:
+    cursor = mysql.get_db ().cursor ()
+    content = request.json
+    inputData = (content['Index'], content['Height_Inches'], content['Weight_Pounds'], hw_id)
+    sql_update_query = """UPDATE hwImport hw SET hw.Index = %s, hw.Height_Inches = %s, hw.Weight_Pounds = %s  WHERE hw.id = %s """
+    cursor.execute ( sql_update_query, inputData )
+    mysql.get_db ().commit ()
+    resp = Response(status=201, mimetype='application/json')
+    return resp
+
+@app.route('/api/v1/hw/', methods=['POST'])
+def api_add() -> str:
+
+    content = request.json
+
+    cursor = mysql.get_db ().cursor ()
+    inputData = (content['Index'], content['Height_Inches'], content['Weight_Pounds'])
+    sql_insert_query = """INSERT INTO hwImport (`Index`,Height_Inches,Weight_Pounds) VALUES (%s,%s,%s) """
+    cursor.execute ( sql_insert_query, inputData )
+    mysql.get_db ().commit ()
     resp = Response(status=201, mimetype='application/json')
     return resp
 
 
-
-@app.route('/api/hw/<int:hw_id>', methods=['DELETE'])
+@app.route('/api/v1/hw/<int:hw_id>', methods=['DELETE'])
 def api_delete(hw_id) -> str:
-    resp = Response(status=210, mimetype='application/json')
+    cursor = mysql.get_db ().cursor ()
+    sql_delete_query = """DELETE FROM hwImport WHERE id = %s """
+    cursor.execute (sql_delete_query, hw_id)
+    mysql.get_db ().commit ()
+    resp = Response(status=200, mimetype='application/json')
     return resp
 
 
