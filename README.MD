@@ -1,12 +1,14 @@
 # Project Description
 This project is a homework assignment to teach how to get Pycharm setup with Docker, Flask, MySQL, and Postman
 ## Screenshots
-* [Table Screenshot](./screenshots/Lesson3Table.jpg)
-* [Web Browser Screenshot](./screenshots/Lesson3WebBrowser.jpg)
-* [One Record Web Browser](./screenshots/Lesson3WebBrowserOneRecord.jpg)
-* [Updated Record](./screenshots/Lesson3UpdatedRecord.jpg)
-* [Deleted Record](./screenshots/Lesson3DeletedRecord.jpg)
-* [Added Record](./screenshots/Lesson3RecordsAdded.jpg)
+* [All Records](./screenshots/Lesson4listingallrecordspostman.jpg)
+* [Single Record](./screenshots/Lesson4SingleRecord.jpg)
+* [Edited Record Evidence](./screenshots/Lesson4EvidenceofEditedRecord.jpg)
+* [Added Record](./screenshots/Lesson4creatingarecord.jpg)
+* [Added Record Evidence](./screenshots/Lesson4EvidenceofCreatedRecord.jpg)
+* [Delete Record](./screenshots/Lesson4DeletedRecord.jpg)
+* [Deleted Record Evidence](./screenshots/Lesson4EvidenceofDeletedRecord.jpg)
+
 
 
 
